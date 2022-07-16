@@ -30,12 +30,19 @@ const success: SuccessState = {
   response: "Task failed successfully",
 };
 
-async function api(): Promise<LoadingState | ErrorState | SuccessState> {
-  return loading;
+async function apiResponse(): Promise<LoadingState | ErrorState | SuccessState> {
+  // https://github.com/lodash/lodash/blob/67389a8c78975d97505fa15aa79bec6397749807/lodash.js#L3875-L3886
+  const randomStateNumber: number = 0 + Math.floor(Math.random() * (2 - 0 + 1));
+
+  return [
+    loading,
+    error,
+    success
+  ]?.at(randomStateNumber) ?? loading;
 }
 
 async function fetchStuff(): Promise<void> {
-  const currentState = await api();
+  const currentState: LoadingState | ErrorState | SuccessState = await apiResponse();
 
   switch (currentState.state) {
     case "loading": {
@@ -43,11 +50,14 @@ async function fetchStuff(): Promise<void> {
       return;
     }
     case "error": {
+      console.log(currentState.state);
       console.log(currentState.status);
       return;
     }
     case "success": {
+      console.log(currentState.state);
       console.log(currentState.status);
+      console.log(currentState.response);
       return;
     }
     default: {
@@ -55,3 +65,5 @@ async function fetchStuff(): Promise<void> {
     }
   }
 }
+
+fetchStuff();

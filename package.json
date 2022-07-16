@@ -1,0 +1,16 @@
+{
+  "name": "state-of-the-union-and-enum-type",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:maurer2/state-of-the-union-and-enum-type.git",
+  "author": "Martin",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.9.1",
+    "tsx": "^3.8.0",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "examples:numeric-enums": "ts-node './examples/numeric-enums/numeric-enums.ts'"
+  }
+}
