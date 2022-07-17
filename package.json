@@ -1,16 +1,28 @@
 {
   "name": "state-of-the-union-and-enum-type",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:maurer2/state-of-the-union-and-enum-type.git",
-  "author": "Martin",
   "license": "MIT",
+  "author": "Martin",
+  "main": "index.js",
+  "scripts": {
+    "examples:numeric-enums": "ts-node './examples/numeric-enums/numeric-enums.ts'"
+  },
   "dependencies": {
+    "@types/node": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-unicorn": "^43.0.1",
+    "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "tsx": "^3.8.0",
     "typescript": "^4.7.4"
-  },
-  "scripts": {
-    "examples:numeric-enums": "ts-node './examples/numeric-enums/numeric-enums.ts'"
   }
 }
